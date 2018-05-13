@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <?php
-include_once "conf/header.php";
+    include_once "conf/header.php";
 ?>
 
 <body>
@@ -80,7 +80,7 @@ include_once "conf/header.php";
                 <!-- /.panel -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-bar-chart-o fa-fw"></i> Заказы
+                        <i class="fa fa-bar-chart-o fa-fw"></i> Статистика
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -88,26 +88,30 @@ include_once "conf/header.php";
                             <div class="col-lg-12">
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th>ID заказа</th>
-                                            <th>Сумма заказа</th>
-                                            <th>ФИО</th>
-                                            <th>E-mail</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php foreach ($pageData['orders'] as $key => $value) {
-                                            echo "<tr>";
-                                            echo "<td>" . $value['id'] . "</td>";
-                                            echo "<td>" . $value['total'] . "</td>";
-                                            echo "<td>" . $value['login'] . "</td>";
-                                            echo "<td>" . $value['email']  . "</td>";
-                                            echo "<tr>";
-                                        }
-                                        ?>
+                                        <div id="chartContainer" style="width:40%;height: 400px" >
+                                                <canvas id="myChart"></canvas>
+                                        </div>
+<!--                                        --><?php //foreach ($pageData['orders'] as $key => $value) {
+//                                            echo "<tr>";
+//                                            echo "<td>" . $value['id'] . "</td>";
+//                                            echo "<td>" . $value['total'] . "</td>";
+//                                            echo "<td>" . $value['login'] . "</td>";
+//                                            echo "<td>" . $value['email']  . "</td>";
+//                                            echo "<tr>";
+//                                        }
+//                                        ?>
                                         </tbody>
+                                        <tbody>
                                     </table>
+<!--                                    <td>-->
+<!--                                        <button>Количество заказов в месяцах</button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button>Количество заказчиков в месяцах</button>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <button>Количество заказов</button>-->
+<!--                                    </td>-->
                                 </div>
                                 <!-- /.table-responsive -->
                             </div>
@@ -129,9 +133,8 @@ include_once "conf/header.php";
 
 </div>
 <!-- /#wrapper -->
-
 <!-- jQuery -->
-<!--<script src="/js/jquery.min.js"></script>-->
+<script src="/js/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/js/bootstrap.min.js"></script>
@@ -139,8 +142,12 @@ include_once "conf/header.php";
 <!-- Metis Menu Plugin JavaScript -->
 <script src="/js/admin/metisMenu.js"></script>
 
+<!-- Chart Plugin JavaScript -->
+<script src="/js/charttest.js"></script>
+
 <!-- Custom Theme JavaScript -->
 <script src="/js/admin/sb-admin-2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 
 </body>
 

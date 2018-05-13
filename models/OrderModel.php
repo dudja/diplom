@@ -64,4 +64,15 @@ class OrderModel extends Model
         return $result;
     }
 
+    public function getOrderSplitMonth() {
+        $sql = "SELECT month(`date_creating`) as month, sum(`total`) as 'sum', count(id) as quantity FROM `order` GROUP BY month(`date_creating`)";
+        $result = array();
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $result[] = $row;
+        }
+        return $result;
+    }
+
 }

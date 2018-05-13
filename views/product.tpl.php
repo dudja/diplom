@@ -75,8 +75,6 @@
 
         </div>
         <!-- /#wrapper -->
-
-        <canvas id="myChart"></canvas>
         <!-- jQuery -->
 <!--        <script src="/js/jquery.min.js"></script>-->
 
@@ -88,10 +86,6 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="/js/admin/sb-admin-2.js"></script>
-
-<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>-->
-        <script src="/js/charttest.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 
 </body>
 

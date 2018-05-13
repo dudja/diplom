@@ -27,9 +27,13 @@ class OrderController extends Controller
 
     public function getOrders()
     {
-        $orders = $this->model->getOrders();
+        return $this->model->getOrders();
     }
 
+    public function getStatistic()
+    {
+        echo json_encode( $this->model->getOrderSplitMonth() );
+    }
 
     public function addOrder()
     {

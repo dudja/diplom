@@ -1,21 +1,74 @@
-$(document).ready(function(){
-    var ctx = document.getElementById("myChart").getContext('2d');
-    var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'line',
+window.onload = function() {
+    var allMonths = [
+        'January', 'February', 'March', 'April', 'May',
+        'June', 'July', 'August', 'September',
+        'October', 'November', 'December'
+    ];
 
-        // The data for our dataset
+    const months = new Array();
+    const quantities = new Array();
+    $.ajax("/order/getStatistic", {
+        dataType: "json",
+        method: "post",
+        success: function (data) {
+            console.log(data);
+            for (index in data) {
+                months.push(allMonths[data[index]['month'] - 1]);
+                quantities.push(data[index]['quantity']);
+            }
+        },
+        error: function (data, status) {
+
+        }
+    });
+
+    var ctx = document.getElementById("myChart").getContext('2d');
+    // var options = {
+    //     yAxes: [{
+    //         ticks: {
+    //             min: 0,
+    //             max: 100,
+    //             stepSize: 20
+    //         }
+    //     }]
+    // }
+
+    var chart = new Chart(ctx, {
+        type: 'bar',
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            labels: months,
             datasets: [{
-                label: "My First dataset",
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45],
+                label: "Статистика заказов по месяцам",
+                backgroundColor: 'rgb(30, 144, 255)',
+                borderColor: 'rgb(0, 0, 139)',
+                data: quantities,
             }]
         },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true,
+                            min: 0,
+                            max: 10,
+                            stepSize: 1
 
-        // Configuration options go here
-        options: {}
+                        }
+                    }]
+
+
+
+
+
+
+
+
+
+
+            }
+        }
     });
-})
+}
+
+
+

@@ -74,7 +74,6 @@ include_once "conf/header.php";
 
         </div>
         <!-- /#wrapper -->
-
         <!-- jQuery -->
         <script src="/js/jquery.min.js"></script>
 <!--        <script src="/dist/css/selectize.default.css"></script>-->
