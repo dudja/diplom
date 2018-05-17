@@ -88,30 +88,12 @@
                             <div class="col-lg-12">
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
-                                        <div id="chartContainer" style="width:40%;height: 400px" >
+                                        <div id="chartContainer" style="width:90%;height: 700px" >
                                                 <canvas id="myChart"></canvas>
                                         </div>
-<!--                                        --><?php //foreach ($pageData['orders'] as $key => $value) {
-//                                            echo "<tr>";
-//                                            echo "<td>" . $value['id'] . "</td>";
-//                                            echo "<td>" . $value['total'] . "</td>";
-//                                            echo "<td>" . $value['login'] . "</td>";
-//                                            echo "<td>" . $value['email']  . "</td>";
-//                                            echo "<tr>";
-//                                        }
-//                                        ?>
                                         </tbody>
                                         <tbody>
                                     </table>
-<!--                                    <td>-->
-<!--                                        <button>Количество заказов в месяцах</button>-->
-<!--                                    </td>-->
-<!--                                    <td>-->
-<!--                                        <button>Количество заказчиков в месяцах</button>-->
-<!--                                    </td>-->
-<!--                                    <td>-->
-<!--                                        <button>Количество заказов</button>-->
-<!--                                    </td>-->
                                 </div>
                                 <!-- /.table-responsive -->
                             </div>
@@ -143,7 +125,7 @@
 <script src="/js/admin/metisMenu.js"></script>
 
 <!-- Chart Plugin JavaScript -->
-<script src="/js/charttest.js"></script>
+<script src="/js/chartStatistic.js"></script>
 
 <!-- Custom Theme JavaScript -->
 <script src="/js/admin/sb-admin-2.js"></script>

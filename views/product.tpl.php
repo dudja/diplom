@@ -21,16 +21,17 @@
                             <div class="panel-heading">
                                 <i class="fa fa-bar-chart-o fa-fw"></i> Продукты
                             </div>
+                            <button id="add-product" value="Создать">Создать</button>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="table-responsive">
-                                            <form action="/product/addProduct" method="POST">
-                                                <input type="text" name="name" >
-                                                <input type="text" name="cost" >
-                                                <input type="submit" name="submit" >
-                                            </form>
+<!--                                            <form action="/product/addProduct" method="POST">-->
+<!--                                                <input type="text" name="name" >-->
+<!--                                                <input type="text" name="cost" >-->
+<!--                                                <input type="submit" name="submit" >-->
+<!--                                            </form>-->
                                             <table class="table table-bordered table-hover table-striped">
                                                 <thead>
                                                 <tr>
@@ -71,21 +72,28 @@
                 </div>
                 <!-- /.row -->
             </div>
-            <!-- /#page-wrapper -->
-
         </div>
-        <!-- /#wrapper -->
-        <!-- jQuery -->
-<!--        <script src="/js/jquery.min.js"></script>-->
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="/js/bootstrap.min.js"></script>
-
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="/js/admin/metisMenu.js"></script>
-
-        <!-- Custom Theme JavaScript -->
         <script src="/js/admin/sb-admin-2.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/sifter.js"></script>
+        <script src="/js/microplugin.js"></script>
+        <script src="/js/admin/metisMenu.js"></script>
+        <link rel="stylesheet" href="/dist/css/selectize.default.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                $("#add-product").click(function(){
+                    form = "<form action='/product/addProduct' method='post'></form>"
+                    name = "<input type='text' placeholder='Наименование' name='name' />";
+                    cost = "<input type='text' placeholder='Стоимость за единицу' name='cost'/>";
+                    submit = "<input type='submit' name='submit' value='Сформировать'/>";
+                    hr = "<hr/>";
+                    $(this).after($(form).append(name).append(cost).append(submit).append(hr));
+                     return false;
+                });             });
+        </script>
 
 </body>
 

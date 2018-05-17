@@ -58,8 +58,7 @@ class OrderModel extends Model
         $stmt = $this->db->prepare($sql);
         $stmt->execute();
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-       //     $result[$row['id']] = $row; // где то еще видел - убери
-            $result[] = $row; // correct
+            $result[] = $row;
         }
         return $result;
     }

@@ -23,16 +23,6 @@ window.onload = function() {
     });
 
     var ctx = document.getElementById("myChart").getContext('2d');
-    // var options = {
-    //     yAxes: [{
-    //         ticks: {
-    //             min: 0,
-    //             max: 100,
-    //             stepSize: 20
-    //         }
-    //     }]
-    // }
-
     var chart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -55,16 +45,6 @@ window.onload = function() {
 
                         }
                     }]
-
-
-
-
-
-
-
-
-
-
             }
         }
     });
